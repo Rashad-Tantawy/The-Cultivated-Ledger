@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/sign_up_screen.dart';
+import '../../features/investor/presentation/screens/investor_dashboard_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
@@ -36,7 +37,17 @@ final appRouter = GoRouter(
         ),
       ),
     ),
-    // Remaining routes will be added as screens are implemented
-    // GoRoute(path: '/investor/home', name: 'investor-dashboard', ...),
+    GoRoute(
+      path: '/investor/home',
+      name: 'investor-dashboard',
+      pageBuilder: (context, state) => CustomTransitionPage(
+        key: state.pageKey,
+        child: const InvestorDashboardScreen(),
+        transitionsBuilder: (context, animation, _, child) => FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+      ),
+    ),
   ],
 );
