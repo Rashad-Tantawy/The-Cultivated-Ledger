@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/app_theme.dart';
@@ -125,7 +126,7 @@ class _TopAppBar extends StatelessWidget {
                 ),
                 // Notification bell
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed('notifications'),
                   icon: const Icon(
                     Icons.notifications_outlined,
                     color: AppColors.secondary,
@@ -220,7 +221,7 @@ class _PortfolioHero extends StatelessWidget {
                   ),
                   const SizedBox(height: 28),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () => context.pushNamed('portfolio-detail'),
                     style: TextButton.styleFrom(
                       backgroundColor: AppColors.surfaceContainerLowest,
                       foregroundColor: AppColors.primary,
@@ -460,7 +461,13 @@ class _FarmersSection extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             itemCount: _farmers.length,
             separatorBuilder: (_, __) => const SizedBox(width: 16),
-            itemBuilder: (context, i) => _FarmerCard(farmer: _farmers[i]),
+            itemBuilder: (context, i) => GestureDetector(
+              onTap: () => context.pushNamed(
+                'farmer-dashboard',
+                pathParameters: {'id': i.toString()},
+              ),
+              child: _FarmerCard(farmer: _farmers[i]),
+            ),
           ),
         ),
       ],
@@ -673,7 +680,7 @@ class _OpportunitiesSection extends StatelessWidget {
           _opportunities.length,
           (i) => Padding(
             padding: const EdgeInsets.only(bottom: 20),
-            child: _OpportunityCard(opportunity: _opportunities[i]),
+            child: _OpportunityCard(opportunity: _opportunities[i], index: i),
           ),
         ),
       ],
@@ -682,7 +689,7 @@ class _OpportunitiesSection extends StatelessWidget {
 }
 
 class _OpportunityCard extends StatelessWidget {
-  const _OpportunityCard({required this.opportunity});
+  const _OpportunityCard({required this.opportunity, required this.index});
   final ({
     String title,
     String location,
@@ -692,6 +699,7 @@ class _OpportunityCard extends StatelessWidget {
     String shares,
     bool isNew,
   }) opportunity;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -893,7 +901,10 @@ class _OpportunityCard extends StatelessWidget {
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: () => context.pushNamed(
+                      'investment-detail',
+                      pathParameters: {'id': index.toString()},
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                       foregroundColor: AppColors.onPrimary,
@@ -958,19 +969,19 @@ class _BottomNavBar extends StatelessWidget {
                     icon: Icons.search_rounded,
                     label: 'Search',
                     isActive: false,
-                    onTap: () {},
+                    onTap: () => context.go('/market'),
                   ),
                   _NavItem(
                     icon: Icons.account_balance_wallet_outlined,
-                    label: 'Investments',
+                    label: 'Wallet',
                     isActive: false,
-                    onTap: () {},
+                    onTap: () => context.go('/wallet'),
                   ),
                   _NavItem(
                     icon: Icons.person_outline_rounded,
                     label: 'Profile',
                     isActive: false,
-                    onTap: () {},
+                    onTap: () => context.go('/profile'),
                   ),
                 ],
               ),
