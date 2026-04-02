@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Design System — The Cultivated Ledger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Work_Sans:wght@300..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            /* ── Primary ── */
+            "primary":                  "#154212",
+            "on-primary":               "#ffffff",
+            "primary-container":        "#2d5a27",
+            "on-primary-container":     "#9dd090",
+            "primary-fixed":            "#bcf0ae",
+            "primary-fixed-dim":        "#a1d494",
+            "on-primary-fixed":         "#002201",
+            "on-primary-fixed-variant": "#23501e",
+            "inverse-primary":          "#a1d494",
+            /* ── Secondary ── */
+            "secondary":                "#805533",
+            "on-secondary":             "#ffffff",
+            "secondary-container":      "#fdc39a",
+            "on-secondary-container":   "#794e2e",
+            "secondary-fixed":          "#ffdcc5",
+            "secondary-fixed-dim":      "#f4bb92",
+            "on-secondary-fixed":       "#301400",
+            "on-secondary-fixed-variant":"#653d1e",
+            /* ── Tertiary ── */
+            "tertiary":                 "#735c00",
+            "on-tertiary":              "#ffffff",
+            "tertiary-container":       "#cca730",
+            "on-tertiary-container":    "#4f3d00",
+            "tertiary-fixed":           "#ffe088",
+            "tertiary-fixed-dim":       "#e9c349",
+            "on-tertiary-fixed":        "#241a00",
+            "on-tertiary-fixed-variant":"#574500",
+            /* ── Error ── */
+            "error":                    "#ba1a1a",
+            "on-error":                 "#ffffff",
+            "error-container":          "#ffdad6",
+            "on-error-container":       "#93000a",
+            /* ── Surface ── */
+            "background":               "#faf9f8",
+            "on-background":            "#1a1c1c",
+            "surface":                  "#faf9f8",
+            "on-surface":               "#1a1c1c",
+            "surface-dim":              "#dadad9",
+            "surface-bright":           "#faf9f8",
+            "surface-variant":          "#e3e2e1",
+            "on-surface-variant":       "#42493e",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low":    "#f4f3f2",
+            "surface-container":        "#eeeeed",
+            "surface-container-high":   "#e9e8e7",
+            "surface-container-highest":"#e3e2e1",
+            "inverse-surface":          "#2f3130",
+            "inverse-on-surface":       "#f1f0f0",
+            /* ── Utility ── */
+            "outline":                  "#72796e",
+            "outline-variant":          "#c2c9bb",
+            "surface-tint":             "#3b6934",
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body":     ["Work Sans", "sans-serif"],
+            "label":    ["Work Sans", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg":      "0.25rem",
+            "xl":      "0.5rem",
+            "2xl":     "0.75rem",
+            "3xl":     "1rem",
+            "full":    "9999px",
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body  { font-family: 'Work Sans', sans-serif; }
+    h1, h2, h3, h4, h5, .headline { font-family: 'Manrope', sans-serif; }
+
+    /* Scrollbar hide utility */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Section anchor offset */
+    [id] { scroll-margin-top: 5rem; }
+  </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen">
+
+  <!-- ══════════════════════════════════════════════
+       TOP NAV — sticky glass header
+  ══════════════════════════════════════════════ -->
+  <header class="sticky top-0 z-50 bg-[#faf9f8]/85 backdrop-blur-md shadow-[0px_12px_32px_rgba(26,28,28,0.06)] h-16 flex items-center px-8 gap-4">
+    <span class="material-symbols-outlined text-primary text-2xl">agriculture</span>
+    <h1 class="text-xl font-extrabold text-primary tracking-tighter">The Cultivated Ledger</h1>
+    <span class="ml-2 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">Design System v1.0</span>
+    <nav class="ml-auto hidden md:flex gap-6 text-sm font-semibold text-on-surface-variant">
+      <a href="#colors"     class="hover:text-primary transition-colors">Colors</a>
+      <a href="#typography" class="hover:text-primary transition-colors">Typography</a>
+      <a href="#elevation"  class="hover:text-primary transition-colors">Elevation</a>
+      <a href="#components" class="hover:text-primary transition-colors">Components</a>
+      <a href="#patterns"   class="hover:text-primary transition-colors">Patterns</a>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 md:px-8 py-16 space-y-24">
+
+    <!-- ══════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════ -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-7 space-y-4">
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px]">The Cultivated Ledger</p>
+        <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight text-on-background leading-tight">The Heritage<br/>Modernist</h2>
+        <p class="text-on-surface-variant leading-relaxed max-w-lg">
+          A premium investment aesthetic that bridges the dirt of the earth and the precision of the stock market.
+          Built on <strong class="text-on-background">Organic Brutalism</strong> — heavy, authoritative typography
+          paired with soft nested surfaces and a palette that feels harvested, not manufactured.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="bg-surface-container-low text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full">Manrope · Work Sans</span>
+          <span class="bg-surface-container-low text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full">Material Symbols</span>
+          <span class="bg-surface-container-low text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="md:col-span-5 bg-primary p-10 rounded-[2rem] text-on-primary shadow-xl relative overflow-hidden min-h-52 flex flex-col justify-between">
+        <div class="relative z-10">
+          <p class="text-[10px] uppercase tracking-widest text-on-primary/60 mb-1">Design Tokens</p>
+          <p class="text-4xl font-black">62</p>
+          <p class="text-sm text-on-primary/70 mt-1">color tokens across 5 roles</p>
+        </div>
+        <div class="relative z-10 flex gap-6">
+          <div><p class="text-[10px] text-on-primary/60 uppercase tracking-wider">Components</p><p class="text-2xl font-bold">14</p></div>
+          <div><p class="text-[10px] text-on-primary/60 uppercase tracking-wider">Patterns</p><p class="text-2xl font-bold">5</p></div>
+        </div>
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         COLORS
+    ══════════════════════════════════════════════ -->
+    <section id="colors" class="space-y-10">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Foundation</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Color System</h2>
+        <p class="text-on-surface-variant mt-2 max-w-2xl">Rooted in <em>Deep Forest</em> and <em>Arable Soil</em> tones, balanced by a <em>Pristine Canvas</em> background. Our palette feels harvested, not manufactured.</p>
+      </div>
+
+      <!-- Primary -->
+      <div>
+        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Primary — Deep Forest Green</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-primary"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">primary</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#154212</p>
+              <p class="text-[10px] text-on-surface-variant">Growth & authority</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-primary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">primary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#2d5a27</p>
+              <p class="text-[10px] text-on-surface-variant">CTA gradient end</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-primary-fixed"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">primary-fixed</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#bcf0ae</p>
+              <p class="text-[10px] text-on-surface-variant">Highlight card bg</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-on-primary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">on-primary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#9dd090</p>
+              <p class="text-[10px] text-on-surface-variant">ROI figures on dark</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div>
+        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Secondary — Arable Soil Brown</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-secondary"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">secondary</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#805533</p>
+              <p class="text-[10px] text-on-surface-variant">Warm professionalism</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-secondary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">secondary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#fdc39a</p>
+              <p class="text-[10px] text-on-surface-variant">Container tint</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-secondary-fixed"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">secondary-fixed</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#ffdcc5</p>
+              <p class="text-[10px] text-on-surface-variant">Light accent</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-on-secondary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">on-secondary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#794e2e</p>
+              <p class="text-[10px] text-on-surface-variant">Text on container</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tertiary -->
+      <div>
+        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Tertiary — Harvest Gold / Ochre</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-tertiary"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">tertiary</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#735c00</p>
+              <p class="text-[10px] text-on-surface-variant">FAB, stars</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-tertiary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">tertiary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#cca730</p>
+              <p class="text-[10px] text-on-surface-variant">Verified badge bg</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-tertiary-fixed"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">tertiary-fixed</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#ffe088</p>
+              <p class="text-[10px] text-on-surface-variant">Warm highlight</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <div class="h-20 bg-on-tertiary-container"></div>
+            <div class="bg-surface-container-lowest p-3">
+              <p class="text-xs font-bold">on-tertiary-container</p>
+              <p class="text-[10px] text-on-surface-variant font-mono">#4f3d00</p>
+              <p class="text-[10px] text-on-surface-variant">Badge text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Surfaces -->
+      <div>
+        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Surface Hierarchy — Pristine Canvas</p>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
+          <div class="rounded-xl overflow-hidden border border-outline-variant/30">
+            <div class="h-14 bg-surface-container-lowest"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">lowest</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#ffffff</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+            <div class="h-14 bg-surface-container-low"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">low</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#f4f3f2</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+            <div class="h-14 bg-surface-container"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">container</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#eeeeed</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+            <div class="h-14 bg-surface-container-high"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">high</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#e9e8e7</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+            <div class="h-14 bg-surface-container-highest"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">highest</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#e3e2e1</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden border border-outline-variant/20">
+            <div class="h-14 bg-surface-dim"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">dim</p>
+              <p class="text-[9px] text-on-surface-variant font-mono">#dadad9</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Utility -->
+      <div>
+        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4">Utility & Error</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] w-36">
+            <div class="h-14 bg-outline"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">outline</p>
+              <p class="text-[9px] font-mono text-on-surface-variant">#72796e</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] w-36">
+            <div class="h-14 bg-outline-variant"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">outline-variant</p>
+              <p class="text-[9px] font-mono text-on-surface-variant">#c2c9bb</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] w-36">
+            <div class="h-14 bg-error"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">error</p>
+              <p class="text-[9px] font-mono text-on-surface-variant">#ba1a1a</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] w-36">
+            <div class="h-14 bg-error-container"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">error-container</p>
+              <p class="text-[9px] font-mono text-on-surface-variant">#ffdad6</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] w-36">
+            <div class="h-14 bg-on-background"></div>
+            <div class="bg-surface-container-lowest p-2">
+              <p class="text-[10px] font-bold">on-background</p>
+              <p class="text-[9px] font-mono text-on-surface-variant">#1a1c1c</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         TYPOGRAPHY
+    ══════════════════════════════════════════════ -->
+    <section id="typography" class="space-y-10">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Foundation</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Typography</h2>
+        <p class="text-on-surface-variant mt-2">High-contrast pairing: <strong class="text-on-background">Manrope</strong> for authority, <strong class="text-on-background">Work Sans</strong> for human warmth.</p>
+      </div>
+
+      <!-- Manrope Scale -->
+      <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-6">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest">Manrope — Display & Headlines</p>
+        <div class="space-y-4 border-l-4 border-primary pl-6">
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">display-lg · 3.5rem · -0.02em · extrabold</p>
+            <p class="font-headline text-[3.5rem] font-extrabold tracking-[-0.02em] leading-none text-on-background">The Cultivated Ledger</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">headline-xl · 3rem · extrabold</p>
+            <p class="font-headline text-[3rem] font-extrabold tracking-tight leading-none text-on-background">Portfolio Value</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">headline-lg · 2rem · bold</p>
+            <p class="font-headline text-[2rem] font-bold tracking-tight text-on-background">Active Opportunities</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">headline-md · 1.5rem · bold</p>
+            <p class="font-headline text-[1.5rem] font-bold text-on-background">Angus Prime #442</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">headline-sm · 1.25rem · bold</p>
+            <p class="font-headline text-[1.25rem] font-bold text-on-background">Montana Highland Ranches</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Sans Scale -->
+      <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-6">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest">Work Sans — Body & Labels</p>
+        <div class="space-y-4 border-l-4 border-secondary pl-6">
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">body-lg · 1rem · regular</p>
+            <p class="text-base text-on-background leading-relaxed">Premium cattle investment located in the fertile grazing lands of the Northern Highlands. A place where heritage meets modern agricultural finance.</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">body-md · 0.875rem · regular</p>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Based on current market valuations, feeding efficiency, and historic yield performance for this specific bloodline.</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">label-md · 0.75rem · semibold</p>
+            <p class="text-xs font-semibold text-on-surface-variant">Secure transaction via The Cultivated Ledger Escrow</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant font-mono mb-1">label-sm · 0.625rem · bold · uppercase · widest tracking</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-secondary">Historical ROI · Est. Annual Return</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type combinations -->
+      <div class="bg-surface-container-low p-8 rounded-xl">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-6">Common Pairings</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-[9px] text-on-surface-variant mb-2 font-mono">Card Header + Subtext</p>
+            <h4 class="font-headline text-xl font-bold text-on-background">Angus Select Batch #042</h4>
+            <p class="text-on-surface-variant text-sm">Montana High Plains</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant mb-2 font-mono">Label + Metric</p>
+            <p class="text-[10px] text-secondary font-bold uppercase tracking-widest">Est. ROI</p>
+            <p class="font-headline text-2xl font-extrabold text-primary">15.2%</p>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant mb-2 font-mono">Section Title Pattern</p>
+            <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Live Market</p>
+            <h3 class="font-headline text-3xl font-bold tracking-tight text-primary">Active Opportunities</h3>
+          </div>
+          <div>
+            <p class="text-[9px] text-on-surface-variant mb-2 font-mono">Navigation Label</p>
+            <p class="font-label text-[10px] font-medium uppercase tracking-wider text-on-surface-variant">Home · Search · Investments · Profile</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         ELEVATION & SURFACES
+    ══════════════════════════════════════════════ -->
+    <section id="elevation" class="space-y-10">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Foundation</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Elevation & Depth</h2>
+        <p class="text-on-surface-variant mt-2 max-w-2xl">Depth is a function of light and stacking, not artificial lines. Treat the UI as physical layers of heavyweight paper.</p>
+      </div>
+
+      <!-- No-Line Rule Callout -->
+      <div class="bg-primary text-on-primary p-8 rounded-xl relative overflow-hidden">
+        <div class="relative z-10 flex items-start gap-4">
+          <span class="material-symbols-outlined text-on-primary/70 text-3xl mt-1">rule</span>
+          <div>
+            <p class="font-headline text-xl font-bold mb-2">The No-Line Rule</p>
+            <p class="text-on-primary/80 text-sm leading-relaxed max-w-xl">Designers are prohibited from using 1px solid borders for sectioning. Boundaries must be defined through <strong class="text-on-primary">background color shifts</strong> or <strong class="text-on-primary">vertical space</strong> (16–20 spacing units).</p>
+          </div>
+        </div>
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+      </div>
+
+      <!-- Layer Illustration -->
+      <div>
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-4">Surface Layer Nesting</p>
+        <div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+          <p class="text-xs text-on-surface-variant mb-2">Base layer: <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">surface #faf9f8</code></p>
+          <div class="bg-surface-container-low p-6 rounded-xl">
+            <p class="text-xs text-on-surface-variant mb-2">Sectioning: <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">surface-container-low #f4f3f2</code></p>
+            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+              <p class="text-xs text-on-surface-variant mb-2">Interactive card: <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">surface-container-lowest #ffffff</code></p>
+              <div class="bg-surface-bright p-4 rounded-xl border border-outline-variant/15">
+                <p class="text-xs text-on-surface-variant">Hover state: <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">surface-bright</code></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shadow Tokens -->
+      <div>
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-4">Shadow Tokens</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+            <p class="text-xs font-bold mb-1">Ambient Card Shadow</p>
+            <p class="text-[10px] font-mono text-on-surface-variant">0px 12px 32px rgba(26,28,28,0.06)</p>
+            <p class="text-[10px] text-on-surface-variant mt-2">Used on all cards and floating panels</p>
+          </div>
+          <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.04)]">
+            <p class="text-xs font-bold mb-1">Subtle List Shadow</p>
+            <p class="text-[10px] font-mono text-on-surface-variant">0px 12px 32px rgba(26,28,28,0.04)</p>
+            <p class="text-[10px] text-on-surface-variant mt-2">Used on farmer/listing cards in lists</p>
+          </div>
+          <div class="bg-[#faf9f8]/85 backdrop-blur-md p-6 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] border border-white/40">
+            <p class="text-xs font-bold mb-1">Glass Header Shadow</p>
+            <p class="text-[10px] font-mono text-on-surface-variant">0px 12px 32px rgba(26,28,28,0.06) + backdrop-blur-md</p>
+            <p class="text-[10px] text-on-surface-variant mt-2">Navigation, top app bars</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         COMPONENTS
+    ══════════════════════════════════════════════ -->
+    <section id="components" class="space-y-16">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">UI Library</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Components</h2>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Buttons</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-4">
+            <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-6">Variants</p>
+
+            <!-- Primary Button -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Primary — bg-gradient-to-br from-primary to-primary-container</p>
+              <button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-md font-bold text-base shadow-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                Invest Now
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+
+            <!-- Secondary Button -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Secondary — bg-surface-container-high, no border</p>
+              <button class="w-full bg-surface-container-high text-on-surface py-4 rounded-md font-semibold text-base hover:bg-surface-container transition-colors">
+                View Detailed Analytics
+              </button>
+            </div>
+
+            <!-- Tertiary / Text Button -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Tertiary — transparent, primary text, weight-600</p>
+              <button class="w-full text-primary font-semibold py-3 flex items-center justify-center gap-2 hover:underline transition-all">
+                Download Full Prospectus
+                <span class="material-symbols-outlined text-sm">download</span>
+              </button>
+            </div>
+
+            <!-- Light on Dark -->
+            <div class="bg-primary rounded-xl p-4">
+              <p class="text-[9px] font-mono text-on-primary/60 mb-2">On-dark surface variant</p>
+              <button class="w-full bg-surface-container-lowest text-primary px-6 py-3 rounded-md font-semibold hover:bg-surface-bright transition-colors text-sm">
+                View Detailed Analytics
+              </button>
+            </div>
+          </div>
+
+          <!-- Button Sizes & States -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-4">
+            <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-6">Sizes & States</p>
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Large (full-width, py-5)</p>
+              <button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-md font-bold text-lg shadow-md">Buy Shares Now</button>
+            </div>
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Medium (px-6, py-3)</p>
+              <button class="bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm hover:opacity-90 transition-opacity flex items-center gap-2">
+                Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+            </div>
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Icon + Text</p>
+              <button class="bg-primary text-on-primary px-5 py-2.5 rounded-md font-semibold text-sm flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">add</span>
+                New Listing
+              </button>
+            </div>
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Disabled state</p>
+              <button disabled class="w-full bg-surface-container-high text-on-surface-variant py-3 rounded-md font-semibold text-sm opacity-40 cursor-not-allowed">
+                Unavailable
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BADGES & CHIPS -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Badges & Chips</h3>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+          <div class="flex flex-wrap gap-4 items-center">
+            <!-- Verified Badge -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Verified Badge (wax stamp)</p>
+              <div class="bg-tertiary-container text-on-tertiary-container px-4 py-2 rounded-full flex items-center gap-2 shadow-sm w-fit">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="text-xs font-bold tracking-wider uppercase">Verified Asset</span>
+              </div>
+            </div>
+
+            <!-- Small verified on card -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Compact (on image)</p>
+              <div class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg w-fit">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                VERIFIED
+              </div>
+            </div>
+
+            <!-- Avatar badge -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">Avatar Verified Dot</p>
+              <div class="relative w-14 h-14">
+                <div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-surface-variant">person</span>
+                </div>
+                <div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container w-6 h-6 rounded-full flex items-center justify-center shadow-md">
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- New Arrival tag -->
+            <div>
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">New Arrival Tag</p>
+              <div class="bg-primary/90 text-on-primary px-3 py-1 rounded text-xs font-bold backdrop-blur-sm w-fit">
+                NEW ARRIVAL
+              </div>
+            </div>
+
+            <!-- Chips -->
+            <div class="w-full mt-4">
+              <p class="text-[9px] font-mono text-on-surface-variant mb-3">Filter Chips</p>
+              <div class="flex flex-wrap gap-2">
+                <button class="bg-primary text-on-primary text-xs font-semibold px-4 py-2 rounded-full">All</button>
+                <button class="bg-surface-container-high text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Angus</button>
+                <button class="bg-surface-container-high text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Hereford</button>
+                <button class="bg-surface-container-high text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Brahman</button>
+                <button class="bg-surface-container-high text-on-surface-variant text-xs font-semibold px-4 py-2 rounded-full hover:bg-surface-container transition-colors">High Yield</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Cards & Listings</h3>
+
+        <!-- Investment Card -->
+        <div>
+          <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-4">Investment Opportunity Card</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] group border border-outline-variant/5">
+              <div class="relative h-44 bg-surface-container-high overflow-hidden flex items-center justify-center">
+                <span class="material-symbols-outlined text-on-surface-variant text-5xl">image</span>
+                <div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded text-xs font-bold">NEW ARRIVAL</div>
+                <div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>VERIFIED
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="font-headline text-lg font-bold text-on-background">Angus Select Batch #042</h4>
+                    <p class="text-on-surface-variant text-sm">Montana High Plains</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-primary font-bold text-lg">15.2%</p>
+                    <p class="text-[10px] text-secondary font-semibold uppercase tracking-wider">EST. ROI</p>
+                  </div>
+                </div>
+                <div class="h-1 w-full bg-surface-container-high rounded-full mb-4">
+                  <div class="h-full bg-primary rounded-full w-3/4"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3 mb-5">
+                  <div>
+                    <p class="text-[10px] text-on-surface-variant uppercase font-medium">Price/share</p>
+                    <p class="text-base font-bold text-on-background">$1,250</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-[10px] text-on-surface-variant uppercase font-medium">Remaining</p>
+                    <p class="text-base font-bold text-secondary">42 / 120</p>
+                  </div>
+                </div>
+                <button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity text-sm">
+                  Invest Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Highlight card (primary-fixed bg) -->
+            <div class="bg-primary-fixed rounded-[1.5rem] overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] border border-outline-variant/5 flex flex-col">
+              <div class="p-6 flex-1">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-primary-fixed/70 mb-3">Featured · High Yield</p>
+                <h4 class="font-headline text-xl font-bold text-on-primary-fixed mb-1">Brahman Specialty #10</h4>
+                <p class="text-sm text-on-primary-fixed/70 mb-4">Miller Ranchlands</p>
+                <p class="font-headline text-5xl font-black text-on-primary-fixed mb-2">16.5%</p>
+                <p class="text-[10px] uppercase tracking-wider text-on-primary-fixed/70 mb-6">Projected Annual Return</p>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="bg-white/30 p-3 rounded-xl">
+                    <p class="text-[9px] uppercase text-on-primary-fixed/60">Price/share</p>
+                    <p class="font-bold text-on-primary-fixed">$2,100</p>
+                  </div>
+                  <div class="bg-white/30 p-3 rounded-xl">
+                    <p class="text-[9px] uppercase text-on-primary-fixed/60">Remaining</p>
+                    <p class="font-bold text-on-primary-fixed">18 / 60</p>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6 pt-0">
+                <button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
+                  Invest Now
+                </button>
+              </div>
+            </div>
+
+            <!-- Farmer Card -->
+            <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,28,0.04)]">
+              <p class="text-[9px] font-mono text-on-surface-variant mb-4">Farmer / Network Card</p>
+              <div class="relative w-16 h-16 mb-4">
+                <div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-on-surface-variant">person</span>
+                </div>
+                <div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container w-7 h-7 rounded-full flex items-center justify-center shadow-md">
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                </div>
+              </div>
+              <h4 class="font-headline text-base font-bold text-on-background">Silas Thorne</h4>
+              <p class="text-secondary text-sm mb-3">Montana Highland Ranches</p>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="text-sm font-bold">4.9</span>
+                <span class="text-on-surface-variant text-sm">(124 Deals)</span>
+              </div>
+              <div class="bg-surface-container-low px-4 py-2 rounded-lg inline-block">
+                <p class="text-[10px] text-on-surface-variant uppercase font-medium">Historical ROI</p>
+                <p class="text-sm font-bold text-primary">12.4% avg.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metadata Mini-Cards -->
+        <div>
+          <p class="text-[10px] font-bold text-secondary uppercase tracking-widest mb-4">Metadata Mini-Cards (Stats Grid)</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Breed</p>
+              <p class="font-headline font-bold text-on-surface">Black Angus</p>
+            </div>
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Age</p>
+              <p class="font-headline font-bold text-on-surface">24 Months</p>
+            </div>
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Health Score</p>
+              <p class="font-headline font-bold text-primary">98/100</p>
+            </div>
+            <div class="bg-surface-container-low p-5 rounded-xl">
+              <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Weight</p>
+              <p class="font-headline font-bold text-on-surface">1,150 lbs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INPUTS -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Input Fields</h3>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Default -->
+            <div class="space-y-4">
+              <p class="text-[9px] font-mono text-on-surface-variant">Default (ghost border at 20%)</p>
+              <div>
+                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Total Shares</label>
+                <input type="number" placeholder="100" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-background font-semibold outline-none focus:border-primary focus:border-2 transition-all placeholder:text-on-surface-variant/40"/>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Price Per Share</label>
+                <input type="text" placeholder="$250" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-background font-semibold outline-none focus:border-primary focus:border-2 transition-all placeholder:text-on-surface-variant/40"/>
+              </div>
+            </div>
+
+            <!-- Active & Select -->
+            <div class="space-y-4">
+              <p class="text-[9px] font-mono text-on-surface-variant">Active state (primary border at 100%, 2px)</p>
+              <div>
+                <label class="block text-xs font-semibold text-primary uppercase tracking-wider mb-2">Breed Category</label>
+                <select class="w-full bg-surface-container-lowest border-2 border-primary rounded-xl px-4 py-3 text-on-background font-semibold outline-none appearance-none">
+                  <option>Mandarin Angus</option>
+                  <option>Hereford</option>
+                  <option>Brahman</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2">Expected ROI</label>
+                <div class="flex items-center gap-3">
+                  <input type="text" value="12.7" class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl px-4 py-3 text-on-background font-semibold outline-none focus:border-primary focus:border-2 transition-all"/>
+                  <span class="text-on-surface-variant font-bold text-sm flex-none">%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload area -->
+            <div class="md:col-span-2">
+              <p class="text-[9px] font-mono text-on-surface-variant mb-2">File / Image Upload</p>
+              <div class="border-2 border-dashed border-outline-variant/40 rounded-xl p-10 text-center bg-surface-container-low hover:border-primary/40 transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-on-surface-variant text-4xl mb-3 block">upload_file</span>
+                <p class="text-sm font-semibold text-on-surface-variant">Click to upload primary image</p>
+                <p class="text-[10px] text-on-surface-variant/60 mt-1">Supports JPG, PNG, WebP · Max 5 MB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRESS BARS -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Progress & Data Indicators</h3>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-6">
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-xs font-semibold text-on-surface-variant">Shares Sold (75%)</span>
+              <span class="text-xs font-bold text-primary">42 / 120 remaining</span>
+            </div>
+            <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+              <div class="h-full bg-primary rounded-full w-3/4 transition-all duration-700"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-xs font-semibold text-on-surface-variant">Shares Sold (50%)</span>
+              <span class="text-xs font-bold text-primary">75 / 150 remaining</span>
+            </div>
+            <div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+              <div class="h-full bg-primary rounded-full w-1/2"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-xs font-semibold text-on-surface-variant">Shares Sold (30%) — Low stock</span>
+              <span class="text-xs font-bold text-secondary">18 / 60 remaining</span>
+            </div>
+            <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+              <div class="h-full bg-secondary rounded-full w-[30%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAB -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Floating Action Button</h3>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+          <div class="flex items-center gap-8">
+            <div class="text-center">
+              <p class="text-[9px] font-mono text-on-surface-variant mb-3">Standard FAB (tertiary)</p>
+              <button class="w-14 h-14 bg-tertiary text-on-tertiary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+            <div class="text-center">
+              <p class="text-[9px] font-mono text-on-surface-variant mb-3">Extended FAB (primary)</p>
+              <button class="h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center gap-3 px-6 hover:scale-105 transition-transform font-bold">
+                <span class="material-symbols-outlined">add</span>
+                New Listing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Navigation</h3>
+        <div class="space-y-4">
+          <!-- Top App Bar -->
+          <div>
+            <p class="text-[9px] font-mono text-on-surface-variant mb-2">Top App Bar — Glassmorphism (85% opacity + backdrop-blur)</p>
+            <div class="bg-[#faf9f8]/85 backdrop-blur-md shadow-[0px_12px_32px_rgba(26,28,28,0.06)] h-16 flex justify-between items-center px-6 rounded-xl">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">agriculture</span>
+                <h1 class="text-xl font-extrabold text-primary tracking-tighter">The Cultivated Ledger</h1>
+              </div>
+              <div class="flex items-center gap-4">
+                <button class="p-2 text-secondary hover:opacity-80 transition-opacity">
+                  <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <button class="p-2 text-secondary hover:opacity-80 transition-opacity">
+                  <span class="material-symbols-outlined">person</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Nav -->
+          <div>
+            <p class="text-[9px] font-mono text-on-surface-variant mb-2">Bottom Navigation Bar</p>
+            <nav class="flex justify-around items-center px-4 py-3 bg-[#faf9f8]/85 backdrop-blur-md rounded-xl shadow-[0px_-4px_24px_rgba(26,28,28,0.04)]">
+              <a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-4 py-1">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="font-label text-[10px] font-medium uppercase tracking-wider">Home</span>
+              </a>
+              <a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors px-4 py-1">
+                <span class="material-symbols-outlined">search</span>
+                <span class="font-label text-[10px] font-medium uppercase tracking-wider">Search</span>
+              </a>
+              <a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors px-4 py-1">
+                <span class="material-symbols-outlined">account_balance_wallet</span>
+                <span class="font-label text-[10px] font-medium uppercase tracking-wider">Investments</span>
+              </a>
+              <a class="flex flex-col items-center justify-center text-secondary hover:text-primary transition-colors px-4 py-1">
+                <span class="material-symbols-outlined">person</span>
+                <span class="font-label text-[10px] font-medium uppercase tracking-wider">Profile</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIST ITEM -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">List Items & Risk/Security Rows</h3>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] space-y-6">
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-primary text-xl mt-0.5">health_and_safety</span>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Comprehensive Insurance</p>
+              <p class="text-[11px] text-on-surface-variant">Full loss protection coverage against disease or mortality.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-primary text-xl mt-0.5">sensors</span>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Biometric Tracking</p>
+              <p class="text-[11px] text-on-surface-variant">24/7 health monitoring via wearable IoT collars.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="material-symbols-outlined text-primary text-xl mt-0.5">analytics</span>
+            <div>
+              <p class="text-sm font-bold text-on-surface">Historical Performance Data</p>
+              <p class="text-[11px] text-on-surface-variant">This investment tracks 1.4% higher than the 5-year average for Grade A Angus assets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE DETAIL ROW -->
+      <div class="space-y-6">
+        <h3 class="font-headline text-2xl font-bold border-l-4 border-primary pl-4">Timeline / Maturity Detail</h3>
+        <div class="bg-surface-container-low p-8 rounded-xl space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-medium text-on-surface-variant">Growth Phase</span>
+            <span class="text-sm font-bold text-on-surface">14 Months</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-medium text-on-surface-variant">Market Readiness</span>
+            <span class="text-sm font-bold text-on-surface">Oct 2025</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-medium text-on-surface-variant">Exit Dividend</span>
+            <span class="text-sm font-bold text-primary">+$12.50 / share</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-medium text-on-surface-variant">Total Asset Valuation</span>
+            <span class="text-sm font-bold text-primary">$25,000.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         PATTERNS
+    ══════════════════════════════════════════════ -->
+    <section id="patterns" class="space-y-16">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Composition</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Layout Patterns</h2>
+      </div>
+
+      <!-- BENTO HERO PATTERN -->
+      <div class="space-y-4">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest">Portfolio Hero Bento Grid</p>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div class="md:col-span-8 bg-primary p-10 rounded-[2rem] text-on-primary shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[260px]">
+            <div class="relative z-10">
+              <p class="font-label uppercase tracking-widest text-on-primary/60 text-xs mb-2">Total Portfolio Value</p>
+              <h2 class="font-headline text-5xl font-extrabold tracking-tight mb-6">$248,500.00</h2>
+              <div class="flex gap-10">
+                <div>
+                  <p class="font-label text-xs text-on-primary/60 uppercase tracking-wider mb-1">Current ROI</p>
+                  <p class="font-headline text-2xl font-bold text-on-primary-container">+14.8%</p>
+                </div>
+                <div>
+                  <p class="font-label text-xs text-on-primary/60 uppercase tracking-wider mb-1">Active Assets</p>
+                  <p class="font-headline text-2xl font-bold">124 Head</p>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-10 mt-6">
+              <button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-md font-semibold hover:bg-surface-bright transition-colors text-sm">
+                View Detailed Analytics
+              </button>
+            </div>
+            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+          </div>
+          <div class="md:col-span-4 bg-surface-container-lowest p-8 rounded-[2rem] shadow-[0px_12px_32px_rgba(26,28,28,0.06)] flex flex-col justify-center border border-outline-variant/10">
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+                  <span class="material-symbols-outlined">account_balance_wallet</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-secondary">Wallet Balance</p>
+                  <p class="font-headline text-xl font-bold">$12,405.20</p>
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-high"></div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary-fixed/30 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined">trending_up</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-secondary">Monthly Yield</p>
+                  <p class="font-headline text-xl font-bold text-primary">+$3,210.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROI BENTO PATTERN -->
+      <div class="space-y-4">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest">ROI Analysis Bento</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 bg-primary-fixed text-on-primary-fixed p-10 rounded-xl relative overflow-hidden">
+            <div class="relative z-10">
+              <p class="text-[12px] font-bold uppercase tracking-[0.2em] mb-4 text-on-primary-fixed/70">Projected Annual Return</p>
+              <h3 class="font-headline text-6xl font-black mb-4">12.4%</h3>
+              <p class="max-w-md leading-relaxed text-sm text-on-primary-fixed/80">Based on current market valuations, feeding efficiency, and historic yield performance for this specific bloodline in the Northern Highland region.</p>
+            </div>
+            <span class="material-symbols-outlined absolute -bottom-8 -right-8 text-[12rem] opacity-10 rotate-12">trending_up</span>
+          </div>
+          <div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-4">Maturity Timeline</p>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-on-surface-variant">Growth Phase</span>
+                  <span class="text-sm font-bold text-on-surface">14 Months</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-on-surface-variant">Market Readiness</span>
+                  <span class="text-sm font-bold text-on-surface">Oct 2025</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-on-surface-variant">Exit Dividend</span>
+                  <span class="text-sm font-bold text-primary">+$12.50 / share</span>
+                </div>
+              </div>
+            </div>
+            <button class="mt-6 text-primary font-bold text-sm flex items-center gap-2 hover:underline">
+              Download Prospectus <span class="material-symbols-outlined text-sm">download</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION TITLE PATTERN -->
+      <div class="space-y-4">
+        <p class="text-[10px] font-bold text-secondary uppercase tracking-widest">Section Title Pattern</p>
+        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+          <div class="flex justify-between items-end">
+            <div>
+              <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Live Market</p>
+              <h3 class="font-headline text-3xl font-bold tracking-tight text-primary">Active Opportunities</h3>
+            </div>
+            <div class="flex gap-2">
+              <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant">chevron_left</span>
+              </button>
+              <button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low transition-colors">
+                <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         DOs & DON'Ts
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-10">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Guidelines</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Do's & Don'ts</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Do -->
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(26,28,28,0.06)] border-l-4 border-primary">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-primary-fixed rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-primary">Do</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-on-surface-variant leading-relaxed">
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use asymmetrical spacing — allow more white space on the right side of containers for editorial flow.</li>
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">headline-lg</code> for card titles to give an authoritative, newspaper-header feel.</li>
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">primary-fixed</code> as background for highlight cards to draw the eye to high-yield opportunities.</li>
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use background color shifts or vertical space (16–20 spacing units) to separate sections.</li>
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">0px 12px 32px rgba(26,28,28,0.06)</code> for ambient shadow on floating elements.</li>
+            <li class="flex gap-3"><span class="text-primary font-bold flex-none mt-0.5">✓</span>Use Glassmorphism (85% opacity + 12px backdrop-blur) for sticky navigation elements.</li>
+          </ul>
+        </div>
+
+        <!-- Don't -->
+        <div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_12px_32px_rgba(26,28,28,0.06)] border-l-4 border-error">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-error-container rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-error text-lg" style="font-variation-settings: 'FILL' 1;">cancel</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-error">Don't</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-on-surface-variant leading-relaxed">
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Use 1px dividers or lines to separate list items. Use 24px of vertical space or a background shift instead.</li>
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Use pure black <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">#000000</code>. Always use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">on-background #1a1c1c</code> for text.</li>
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Use high-intensity shadows. If it looks like a shadow, it's too dark — it should feel like a "soft glow of absence."</li>
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">DEFAULT</code> or <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">sm</code> roundedness for large components. Use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">lg</code> or <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">xl</code>.</li>
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Move cards "up" via shadow on hover — transition the background color to <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">surface-bright</code> instead.</li>
+            <li class="flex gap-3"><span class="text-error font-bold flex-none mt-0.5">✗</span>Use 100% opaque borders. If accessibility requires a border, use <code class="font-mono bg-surface-container text-on-surface-variant px-1 rounded">outline-variant</code> at 15% opacity only.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         SPACING SCALE REFERENCE
+    ══════════════════════════════════════════════ -->
+    <section class="space-y-8">
+      <div>
+        <p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Foundation</p>
+        <h2 class="text-4xl font-extrabold tracking-tight">Spacing Scale</h2>
+        <p class="text-on-surface-variant mt-2">Based on a 4px base unit (Tailwind default).</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+        <div class="space-y-3">
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">1</span>
+            <div class="h-4 bg-primary rounded" style="width:4px"></div>
+            <span class="text-[10px] text-on-surface-variant">4px — micro gap, inline icon spacing</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">2</span>
+            <div class="h-4 bg-primary rounded" style="width:8px"></div>
+            <span class="text-[10px] text-on-surface-variant">8px — tight grouping</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">3</span>
+            <div class="h-4 bg-primary rounded" style="width:12px"></div>
+            <span class="text-[10px] text-on-surface-variant">12px — text group separator (in cards, never use a line)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">4</span>
+            <div class="h-4 bg-primary rounded" style="width:16px"></div>
+            <span class="text-[10px] text-on-surface-variant">16px — standard gap</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">6</span>
+            <div class="h-4 bg-primary rounded" style="width:24px"></div>
+            <span class="text-[10px] text-on-surface-variant">24px — section item spacing (replaces divider lines)</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">8</span>
+            <div class="h-4 bg-primary rounded" style="width:32px"></div>
+            <span class="text-[10px] text-on-surface-variant">32px — card internal padding compact</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">10</span>
+            <div class="h-4 bg-primary rounded" style="width:40px"></div>
+            <span class="text-[10px] text-on-surface-variant">40px — card internal padding standard</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">16</span>
+            <div class="h-4 bg-primary rounded" style="width:64px"></div>
+            <span class="text-[10px] text-on-surface-variant">64px — section vertical spacing (4rem) — logical section break</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-[10px] font-mono text-on-surface-variant w-8">20</span>
+            <div class="h-4 bg-primary rounded" style="width:80px"></div>
+            <span class="text-[10px] text-on-surface-variant">80px — section vertical spacing (5rem) — generous break</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-24 bg-inverse-surface text-inverse-on-surface px-8 py-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-wrap gap-8 items-start justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-inverse-on-surface/70 text-2xl">agriculture</span>
+            <h2 class="font-headline text-xl font-extrabold tracking-tighter">The Cultivated Ledger</h2>
+          </div>
+          <p class="text-sm text-inverse-on-surface/60 max-w-sm leading-relaxed">Design System v1.0 · The Cultivated Ledger · The Heritage Modernist aesthetic.</p>
+        </div>
+        <div class="space-y-2 text-sm">
+          <p class="font-bold text-xs uppercase tracking-widest text-inverse-on-surface/60 mb-3">Tokens</p>
+          <p class="text-inverse-on-surface/80">Primary: <span class="font-mono">#154212</span></p>
+          <p class="text-inverse-on-surface/80">Secondary: <span class="font-mono">#805533</span></p>
+          <p class="text-inverse-on-surface/80">Tertiary: <span class="font-mono">#735c00</span></p>
+          <p class="text-inverse-on-surface/80">Background: <span class="font-mono">#faf9f8</span></p>
+        </div>
+        <div class="space-y-2 text-sm">
+          <p class="font-bold text-xs uppercase tracking-widest text-inverse-on-surface/60 mb-3">Typography</p>
+          <p class="text-inverse-on-surface/80 font-headline font-bold">Manrope — Headlines</p>
+          <p class="text-inverse-on-surface/80">Work Sans — Body & Labels</p>
+          <p class="text-inverse-on-surface/80">Material Symbols — Icons</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cattle Detail | The Cultivated Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Work_Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#f4bb92",
+              "on-tertiary-fixed-variant": "#574500",
+              "surface-container-low": "#f4f3f2",
+              "inverse-primary": "#a1d494",
+              "on-secondary-fixed-variant": "#653d1e",
+              "tertiary": "#735c00",
+              "secondary-fixed": "#ffdcc5",
+              "tertiary-container": "#cca730",
+              "on-background": "#1a1c1c",
+              "surface-bright": "#faf9f8",
+              "tertiary-fixed": "#ffe088",
+              "on-secondary-fixed": "#301400",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e9e8e7",
+              "secondary-container": "#fdc39a",
+              "on-tertiary-container": "#4f3d00",
+              "surface-container": "#eeeeed",
+              "on-primary-container": "#9dd090",
+              "background": "#faf9f8",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#23501e",
+              "on-surface-variant": "#42493e",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e3e2e1",
+              "secondary": "#805533",
+              "inverse-on-surface": "#f1f0f0",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2f3130",
+              "primary-fixed": "#bcf0ae",
+              "on-primary-fixed": "#002201",
+              "on-tertiary-fixed": "#241a00",
+              "surface-tint": "#3b6934",
+              "outline": "#72796e",
+              "primary-container": "#2d5a27",
+              "primary": "#154212",
+              "surface-dim": "#dadad9",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e3e2e1",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#794e2e",
+              "primary-fixed-dim": "#a1d494",
+              "outline-variant": "#c2c9bb",
+              "surface": "#faf9f8",
+              "on-surface": "#1a1c1c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, .headline-font { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background min-h-screen pb-24">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f8]/85 backdrop-blur-md shadow-[0px_12px_32px_rgba(26,28,28,0.06)] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#154212]">agriculture</span>
+<span class="text-xl font-extrabold text-[#154212] tracking-tighter">The Cultivated Ledger</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#805533]">notifications</span>
+<span class="material-symbols-outlined text-[#805533]">person</span>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-24 pb-12">
+<!-- Breadcrumb / Back Navigation (Suppresses main shell feel) -->
+<div class="mb-8 flex items-center gap-2 text-secondary font-medium">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span class="text-sm">Back to Marketplace</span>
+</div>
+<!-- Hero Section: Asymmetric Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left: Hero Image (60% width on desktop) -->
+<div class="lg:col-span-7">
+<div class="relative group">
+<img alt="Premium Cattle Investment" class="w-full aspect-[4/3] object-cover rounded-xl shadow-lg border-none" data-alt="Stunning close-up portrait of a prime Hereford cow grazing in a sun-drenched rolling green meadow at golden hour, shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC8ei4GyHYa-fnV8qH6gNu0ctAwcvnnf_g6RPlinYYb8no25TFrnrudPHJmLo3j1L56JFXgcW9qzkh_xC6f7rPwEeiTbohQQ65_W6LtaPTy1TNNUtR5E4k8IGKutqRO6F9HkwHTVV-aDmZTQOi6JaI6x1j-qsMfcyUlNTg2sC7uV9ywG5s1kiNN-orETpPDejF4WiZ3-l-rDX_LRDacx5IIoW0PLSufNxsSpY0l3rIEeCXQAMBeOZHBwDPkRglyoiumErZGukveLo"/>
+<div class="absolute top-4 left-4">
+<div class="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-bold tracking-wider uppercase">Verified Asset</span>
+</div>
+</div>
+</div>
+<!-- Secondary Metadata -->
+<div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Breed</p>
+<p class="headline-font font-bold text-on-surface">Black Angus</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Age</p>
+<p class="headline-font font-bold text-on-surface">24 Months</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Health Score</p>
+<p class="headline-font font-bold text-primary">98/100</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Weight</p>
+<p class="headline-font font-bold text-on-surface">1,150 lbs</p>
+</div>
+</div>
+</div>
+<!-- Right: Investment Details (Sticky Sidebar) -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)] flex flex-col">
+<h1 class="text-4xl font-extrabold tracking-tight headline-font text-on-surface mb-2">Angus Prime #442</h1>
+<p class="text-secondary mb-8">Premium cattle investment located in the fertile grazing lands of the Northern Highlands.</p>
+<div class="space-y-6 mb-10">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<div>
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest">Share Price</p>
+<p class="text-3xl font-extrabold headline-font text-primary">$45.00</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest">Remaining</p>
+<p class="text-xl font-bold headline-font text-on-surface">142 / 500</p>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[72%]"></div>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-md font-bold text-lg shadow-md hover:opacity-90 transition-opacity">
+                            Buy Shares Now
+                        </button>
+<p class="text-center text-[11px] text-on-surface-variant italic">Secure transaction via The Cultivated Ledger Escrow</p>
+</div>
+</div>
+<!-- Verified Farmer Card -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img alt="Verified Farmer" class="w-14 h-14 rounded-full object-cover grayscale" data-alt="Portrait of a professional farmer in his 50s with weathered features and a kind smile, wearing a denim shirt against a rural farm backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxpgNkUvo5w2eOJCM-kRz_66toiTYYVMCHPd69CM9T0h2HyJX9sPqwYYT8O62aCP40ZnbTE9t9YfeLBitcuItlavSuZq-WcwB1fiGwnp5zrLzBc9koUZzfW2RiCzVIImVUEdDdCmwl3_daFskNoVtk4hwLtUWKmW7L0w5-GhrFN8UrLs4hiGoj1dRTZjCHM0mzFHqJ5LB1loNJMMi6TE8MnUSiDP2c7TJ9LfYFR12yUTwJsNy9M9dIWlP1TM5JdDe1izGLhJgkF0U"/>
+<div>
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest">Asset Manager</p>
+<p class="headline-font font-bold text-on-surface">Silas Thorne</p>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-bold">4.98 (240 Investments)</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Expected ROI Breakdown (Bento Style) -->
+<section class="mt-20">
+<h2 class="text-3xl font-extrabold headline-font mb-10 text-on-surface border-l-4 border-primary pl-4">Expected ROI Analysis</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Main ROI Figure -->
+<div class="md:col-span-2 bg-primary-fixed text-on-primary-fixed p-10 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-[12px] font-bold uppercase tracking-[0.2em] mb-4">Projected Annual Return</p>
+<h3 class="text-6xl font-black headline-font mb-4">12.4%</h3>
+<p class="max-w-md text-on-primary-fixed-variant leading-relaxed">Based on current market valuations, feeding efficiency, and historic yield performance for this specific bloodline in the Northern Highland region.</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-8 -right-8 text-[12rem] opacity-10 rotate-12">trending_up</span>
+</div>
+<!-- Detailed Breakdown -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+<div>
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-6">Maturity Timeline</p>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Growth Phase</span>
+<span class="text-sm font-bold text-on-surface">14 Months</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Market Readiness</span>
+<span class="text-sm font-bold text-on-surface">Oct 2025</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-medium text-on-surface-variant">Exit Dividend</span>
+<span class="text-sm font-bold text-primary">+$12.50 / share</span>
+</div>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm flex items-center gap-2 hover:underline">
+                        Download Full Prospectus
+                        <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<!-- Risk Factors (Secondary Tonal Shift) -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-8 rounded-xl">
+<p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-6">Security &amp; Risk</p>
+<div class="space-y-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">health_and_safety</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Comprehensive Insurance</p>
+<p class="text-[11px] text-on-surface-variant">Full loss protection coverage against disease or mortality.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">sensors</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Biometric Tracking</p>
+<p class="text-[11px] text-on-surface-variant">24/7 health monitoring via wearable IoT collars.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Past Performance Context -->
+<div class="bg-surface-container-low p-8 rounded-xl md:col-span-2 flex items-center gap-8">
+<div class="hidden sm:block">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface headline-font mb-1">Historical Comparison</h4>
+<p class="text-sm text-on-surface-variant">This investment tracks 1.4% higher than the 5-year average for Grade A Angus assets in this territory.</p>
+</div>
+<div class="ml-auto flex -space-x-2">
+<!-- Stakeholder Avatars -->
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a middle aged man with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTB8UZ4pldLdi7etm8w31scxNfF9HRaQ9oZEBX20vUOKrk9bt9AbB343CohiH4ZW2JDhjhLBRHnzFczeOVurmOnPE7Da2Di8KWL3T8YDGaJaG3s02UZHRVgL-yH9RpUZR5Nps60PahmYBeHfMBbJmreC4bLg6-dH79wPvoEE4nxSzrNv6M1zQxZ9yh9uP41gId4FVC7UkjRXlr45Ty-oOrSGyJNoLThPz4-lYThDJxuoMti2bJhnGWbXR_YHVCJIc6dAJem64-rqs"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young smiling professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2cI7LhpJoKiNSC8ye_k_5BToimx_e2A_QEpMVxN2vRR2wqxxvusPuIhz9mcsNm5W52jmu8Gcip5a5MYD9LBi3nF5X_Z_HiVcFnWw59NRhe3FArlS_5GqsWe4cDvgjNooaN34nGD7-88tHISWOsQytrao_jDOtOpZqWaYuA_iR8Ui9EwTJFfx1PDfMoJIlsH7RCabiGUpk5K-X9soiBiMxtjN6TsBOPqnV5R_EiGySoJmp4aBEr8a4iK_ECMEB03dZQyFgRi0mtU"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary flex items-center justify-center text-[10px] text-on-primary font-bold">
+                            +12
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell (Mobile only behavior) -->
+<footer class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#faf9f8]/85 backdrop-blur-md z-50 rounded-t-[0.75rem] md:hidden shadow-[0px_-4px_24px_rgba(26,28,28,0.04)]">
+<div class="flex flex-col items-center justify-center text-[#805533] px-4 py-1">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#154212] text-[#ffffff] rounded-xl px-4 py-1">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#805533] px-4 py-1">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Investments</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#805533] px-4 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Profile</span>
+</div>
+</footer>
+</body></html>

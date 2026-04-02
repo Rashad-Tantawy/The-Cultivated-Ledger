@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cultivated Ledger | List Your Asset</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Work_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#f4bb92",
+              "on-tertiary-fixed-variant": "#574500",
+              "surface-container-low": "#f4f3f2",
+              "inverse-primary": "#a1d494",
+              "on-secondary-fixed-variant": "#653d1e",
+              "tertiary": "#735c00",
+              "secondary-fixed": "#ffdcc5",
+              "tertiary-container": "#cca730",
+              "on-background": "#1a1c1c",
+              "surface-bright": "#faf9f8",
+              "tertiary-fixed": "#ffe088",
+              "on-secondary-fixed": "#301400",
+              "on-error": "#ffffff",
+              "surface-container-high": "#e9e8e7",
+              "secondary-container": "#fdc39a",
+              "on-tertiary-container": "#4f3d00",
+              "surface-container": "#eeeeed",
+              "on-primary-container": "#9dd090",
+              "background": "#faf9f8",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#23501e",
+              "on-surface-variant": "#42493e",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e3e2e1",
+              "secondary": "#805533",
+              "inverse-on-surface": "#f1f0f0",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2f3130",
+              "primary-fixed": "#bcf0ae",
+              "on-primary-fixed": "#002201",
+              "on-tertiary-fixed": "#241a00",
+              "surface-tint": "#3b6934",
+              "outline": "#72796e",
+              "primary-container": "#2d5a27",
+              "primary": "#154212",
+              "surface-dim": "#dadad9",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e3e2e1",
+              "tertiary-fixed-dim": "#e9c349",
+              "on-secondary-container": "#794e2e",
+              "primary-fixed-dim": "#a1d494",
+              "outline-variant": "#c2c9bb",
+              "surface": "#faf9f8",
+              "on-surface": "#1a1c1c"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Work Sans"],
+              "label": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(250, 249, 248, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-24 md:pb-0">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-16 shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="agriculture">agriculture</span>
+<h1 class="text-xl font-extrabold text-primary tracking-tighter font-headline">The Cultivated Ledger</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center text-sm font-medium tracking-wider uppercase font-label">
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#">Search</a>
+<a class="text-primary font-bold" href="#">Investments</a>
+<a class="text-secondary hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-12 px-6 max-w-5xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full inline-block mb-4 shadow-sm">Vendor Portal</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-primary leading-tight max-w-2xl">
+                Register a New Livestock Asset
+            </h2>
+<p class="text-on-surface-variant mt-4 text-lg max-w-xl font-light">
+                Document your herd with precision. Every detail ensures the highest level of investor confidence and tilled growth.
+            </p>
+</section>
+<!-- Form Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Stepper (Editorial style) -->
+<aside class="lg:col-span-3">
+<div class="sticky top-24 space-y-8">
+<div class="flex gap-4 items-start group">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 font-bold text-sm">1</div>
+<div>
+<p class="font-headline font-bold text-primary text-sm uppercase tracking-wider">Visual Assets</p>
+<p class="text-on-surface-variant text-xs mt-1">Capture the health and lineage of the cattle.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start opacity-40">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 font-bold text-sm">2</div>
+<div>
+<p class="font-headline font-bold text-on-surface text-sm uppercase tracking-wider">Biological Profile</p>
+<p class="text-on-surface-variant text-xs mt-1">Breed, age, and health certifications.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start opacity-40">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 font-bold text-sm">3</div>
+<div>
+<p class="font-headline font-bold text-on-surface text-sm uppercase tracking-wider">Financial Structure</p>
+<p class="text-on-surface-variant text-xs mt-1">Shares, pricing, and projected yields.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Form Sections -->
+<div class="lg:col-span-9 space-y-16">
+<!-- Section 1: Multi-Image Upload -->
+<section id="step-1">
+<div class="bg-surface-container-low p-10 rounded-xl">
+<h3 class="font-headline text-2xl font-bold text-primary mb-6">Visual Documentation</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Main Upload Area -->
+<div class="md:col-span-2 relative aspect-[16/9] bg-surface-container-lowest rounded-xl border-2 border-dashed border-outline-variant hover:border-primary transition-colors flex flex-col items-center justify-center cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary mb-2 transition-colors" data-icon="add_a_photo">add_a_photo</span>
+<p class="text-on-surface font-medium">Click to upload primary image</p>
+<p class="text-on-surface-variant text-xs mt-1">Supports High-res JPG, PNG (Max 10MB)</p>
+</div>
+<!-- Side Slots -->
+<div class="flex md:flex-col gap-4">
+<div class="flex-1 aspect-square bg-surface-container-lowest rounded-xl border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img alt="Cattle detail" class="w-full h-full object-cover" data-alt="Close up portrait of a healthy Angus cow in a sun-drenched pasture with soft morning dew on the grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlUiW35pPGaImBgvbQwzCusuOja3nRDR45ZM_tuu54XarYVlE6XtxSXF_Aqfy2tV-6SjG0TdWb0hI2rf7I-himoje9hgyCrtmHB457z3nQ5RPa8dV4igIq-gGFAtvHJ9FJ72zR9XzyTPqUPe-s28onmUMtGkC7PHnx9zhapEMD12b-XhZLBC5ONHXmVMdYMB9McAGGRkEhVAtnbVn35PHYUpQB_E3GT8IKIjF24jH4lKC5nudt4AtX0dnP_UJaC95IQLKy7l0ztdg"/>
+</div>
+<div class="flex-1 aspect-square bg-surface-container-lowest rounded-xl border border-outline-variant/30 flex items-center justify-center border-dashed">
+<span class="material-symbols-outlined text-outline-variant" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Details -->
+<section id="step-2">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0px_12px_32px_rgba(26,28,28,0.06)]">
+<h3 class="font-headline text-2xl font-bold text-primary mb-8">Biological Profile</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Breed Category</label>
+<select class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+<option>Aberdeen Angus</option>
+<option>Brahman</option>
+<option>Hereford</option>
+<option>Charolais</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Age (Months)</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="e.g. 24" type="number"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Health Status &amp; Certifications</label>
+<textarea class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Detail recent vaccinations, weight trends, and lineage stability..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex items-center gap-4 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<p class="text-sm font-bold text-primary">Certified Veterinary Inspection</p>
+<p class="text-xs text-on-surface-variant">Uploading a CVI increases investor visibility by 40%.</p>
+</div>
+<button class="ml-auto text-xs font-bold text-primary hover:underline" type="button">Upload Doc</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Financials -->
+<section id="step-3">
+<div class="bg-surface-container-low p-10 rounded-xl">
+<h3 class="font-headline text-2xl font-bold text-primary mb-8">Investment Structure</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Total Shares</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 pl-4 pr-12 focus:ring-2 focus:ring-primary focus:border-primary transition-all" type="number" value="100"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-outline-variant font-bold">QTY</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Price Per Share</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary font-bold">$</span>
+<input class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="250" type="number"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary font-label">Expected ROI</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-outline-variant/20 rounded-md py-3 pl-4 pr-12 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="12.5" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-primary font-bold">%</span>
+</div>
+</div>
+</div>
+<!-- Summary Card (Glassmorphism inspired) -->
+<div class="mt-10 p-8 rounded-2xl bg-primary-container text-on-primary-container flex flex-col md:flex-row justify-between items-center gap-6">
+<div>
+<h4 class="text-sm font-bold uppercase tracking-widest opacity-80 mb-1">Total Asset Valuation</h4>
+<p class="text-3xl font-extrabold font-headline">$25,000.00</p>
+</div>
+<div class="text-center md:text-right">
+<p class="text-xs opacity-80 font-medium">Estimated Harvest Term</p>
+<p class="text-lg font-bold">18 - 24 Months</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-4 pt-8">
+<button class="flex-1 bg-surface-container-high text-on-surface font-bold py-4 rounded-md hover:bg-surface-container-highest transition-colors">
+                        Save as Draft
+                    </button>
+<button class="flex-[2] bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold py-4 rounded-md shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all">
+                        Submit Listing for Review
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex md:hidden justify-around items-center px-4 py-3 pb-safe bg-[#faf9f8]/85 dark:bg-[#1a1c1c]/85 backdrop-blur-md z-50 rounded-t-[0.75rem]">
+<div class="flex flex-col items-center justify-center text-[#805533] dark:text-[#f4f3f2]/70 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-label mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#805533] dark:text-[#f4f3f2]/70 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-label mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#154212] text-[#ffffff] rounded-xl px-4 py-1">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-label mt-1">Investments</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#805533] dark:text-[#f4f3f2]/70 px-4 py-1">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium uppercase tracking-wider font-label mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

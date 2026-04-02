@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Work_Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f4bb92",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-low": "#f4f3f2",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-fixed-variant": "#653d1e",
+                        "tertiary": "#735c00",
+                        "secondary-fixed": "#ffdcc5",
+                        "tertiary-container": "#cca730",
+                        "on-background": "#1a1c1c",
+                        "surface-bright": "#faf9f8",
+                        "tertiary-fixed": "#ffe088",
+                        "on-secondary-fixed": "#301400",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "secondary-container": "#fdc39a",
+                        "on-tertiary-container": "#4f3d00",
+                        "surface-container": "#eeeeed",
+                        "on-primary-container": "#9dd090",
+                        "background": "#faf9f8",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#23501e",
+                        "on-surface-variant": "#42493e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e1",
+                        "secondary": "#805533",
+                        "inverse-on-surface": "#f1f0f0",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3130",
+                        "primary-fixed": "#bcf0ae",
+                        "on-primary-fixed": "#002201",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#3b6934",
+                        "outline": "#72796e",
+                        "primary-container": "#2d5a27",
+                        "primary": "#154212",
+                        "surface-dim": "#dadad9",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e3e2e1",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#794e2e",
+                        "primary-fixed-dim": "#a1d494",
+                        "outline-variant": "#c2c9bb",
+                        "surface": "#faf9f8",
+                        "on-surface": "#1a1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f8]/85 backdrop-blur-md shadow-[0px_12px_32px_rgba(26,28,28,0.06)] h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#154212] text-2xl" data-icon="agriculture">agriculture</span>
+<h1 class="text-xl font-extrabold text-[#154212] tracking-tighter">The Cultivated Ledger</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#805533] hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<!-- Portfolio Summary Bento-Style Hero -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<div class="md:col-span-8 bg-primary p-10 rounded-[2rem] text-on-primary shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[320px]">
+<div class="relative z-10">
+<p class="font-label uppercase tracking-widest text-on-primary/60 text-xs mb-2">Total Portfolio Value</p>
+<h2 class="text-5xl font-extrabold tracking-tight mb-8">$248,500.00</h2>
+<div class="flex gap-12">
+<div>
+<p class="font-label text-xs text-on-primary/60 uppercase tracking-wider mb-1">Current ROI</p>
+<p class="text-2xl font-bold text-on-primary-container">+14.8%</p>
+</div>
+<div>
+<p class="font-label text-xs text-on-primary/60 uppercase tracking-wider mb-1">Active Assets</p>
+<p class="text-2xl font-bold">124 Head</p>
+</div>
+</div>
+</div>
+<div class="relative z-10 mt-8">
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-md font-semibold hover:bg-surface-bright transition-colors text-sm">
+                        View Detailed Analytics
+                    </button>
+</div>
+<!-- Abstract Grain Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest p-8 rounded-[2rem] shadow-[0px_12px_32px_rgba(26,28,28,0.06)] flex flex-col justify-center border border-outline-variant/10">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-secondary">Wallet Balance</p>
+<p class="text-xl font-bold">$12,405.20</p>
+</div>
+</div>
+<div class="h-px bg-surface-container-high"></div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-secondary">Monthly Yield</p>
+<p class="text-xl font-bold text-primary">+$3,210.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Rated Farmers Horizontal Scroll -->
+<section class="mb-16">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Our Network</p>
+<h3 class="text-3xl font-bold tracking-tight text-primary">Top Rated Farmers</h3>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">View All Network</button>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
+<!-- Farmer Card 1 -->
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,28,0.04)] snap-start">
+<div class="relative w-20 h-20 mb-4">
+<img alt="Farmer Profile" class="w-full h-full object-cover rounded-full" data-alt="Close-up portrait of a weathered, smiling farmer in a burlap hat against a sunlit rural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYXgXIdOL_ZJprId2NAGjYzn00YKe-ZWvj0IvVBEKAzSujjmRGdg7IuxppZqVwujHCbbcrnJnWrhNRxgOWpCwzHCaYzUYR_lEkRM82LT3II6IpRrKyK9UosB7NKQH9RFt8iTiSShyfrSgyiBd1cW_9IMr05CueJOcFbGFbOyOzFXKatYyhrU-MXr4cZzs9TtCJKAk4f0qTkaYouQQ168kTcWxXSx51jkFREPMcq3Q6uJJ8_bcJlUQitH6kfEtx75YSsU2hbkmnGEg"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-background">Silas Thorne</h4>
+<p class="text-secondary text-sm mb-4">Montana Highland Ranches</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.9</span>
+<span class="text-on-surface-variant text-sm">(124 Deals)</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg inline-block">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Historical ROI</p>
+<p class="text-sm font-bold text-primary">12.4% avg.</p>
+</div>
+</div>
+<!-- Farmer Card 2 -->
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,28,0.04)] snap-start">
+<div class="relative w-20 h-20 mb-4">
+<img alt="Farmer Profile" class="w-full h-full object-cover rounded-full" data-alt="Portrait of a female rancher in a denim jacket looking confidently at the camera in a golden field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD01uBl5MhlXXsipcJyD-87ocvl4bdmotV9JFCZPl7n3-dD5W1YUC23MYOsiXPmDKLL2baKJDNQcuNdmNC36_VkMT4LPAPKC2-n01p2pPSbogqZY4MtoDwNuh6DDC_KmwPViEYmuJmP-Pa6Zc3cdm4nxBHVZzz2XApEGWzwmuzonGuhY6xHX7ZQFycRjYkbzdYFqngFSisO87ESrZDSibrGlAhM-kBo1ra2b4gjPqWsuKVScn7mBsRm0eFHdqwquoKxBYyJfsOlGcY"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-background">Elena Rodriguez</h4>
+<p class="text-secondary text-sm mb-4">Verde Valley Organics</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">5.0</span>
+<span class="text-on-surface-variant text-sm">(86 Deals)</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg inline-block">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Historical ROI</p>
+<p class="text-sm font-bold text-primary">14.1% avg.</p>
+</div>
+</div>
+<!-- Farmer Card 3 -->
+<div class="flex-none w-72 bg-surface-container-lowest rounded-xl p-6 shadow-[0px_12px_32px_rgba(26,28,28,0.04)] snap-start">
+<div class="relative w-20 h-20 mb-4">
+<img alt="Farmer Profile" class="w-full h-full object-cover rounded-full" data-alt="Middle-aged man with beard wearing a traditional wide-brimmed hat standing in front of a barn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbG8plr_PnqGkUVGK61SXdV7wVjpLTh-iMu91KHsDdWDon44NuWYAjapaFd9k7WhZDSmRAlPjoQg1PZE3gvIAGD9I5o4zjtH_BxuqAKSjkB2tA6TVOrzc0VO8nNnI9LtqGpuw0-K5gITbAqUfjmxxfsyirr4NCnHCTDlTMZLCa122pxK-q88Q4zwbwapdSKGP1woVMW54JD0QAZa10B5cvIdSZA3VxX_lm_k7x7o844uqzqWMQ-DmOi6oCoZNvcN-F9OZmVR2HclI"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-on-background">Arthur Miller</h4>
+<p class="text-secondary text-sm mb-4">Miller’s Heritage Cattle</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.8</span>
+<span class="text-on-surface-variant text-sm">(210 Deals)</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg inline-block">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Historical ROI</p>
+<p class="text-sm font-bold text-primary">11.8% avg.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newest Investment Opportunities -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-secondary font-semibold uppercase tracking-widest text-[10px] mb-1">Live Market</p>
+<h3 class="text-3xl font-bold tracking-tight text-primary">Active Opportunities</h3>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Investment Card 1 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] group border border-outline-variant/5">
+<div class="relative h-56 overflow-hidden">
+<img alt="Angus Cattle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Majestic black Angus cattle standing in a lush green pasture with rolling hills in the background at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXhp_oXrHWqgRUZo0dDnAMi3bnvD0wn4Rjwy0OiW1jOFGvoIPKlxjCdZ8GmJxvcgVo0__UZv_eZzkm-U9647Cd2KB30jw3qcb5gHQKa_3GhCW0pMMv1Z1s8bO1YZCwaOj5rh3Rvs9-tIS4LJUjXQ1iGGrsdHIUHL6tIm0-QRLCZ4Yn7lwmQbdHh-LNAGyiLv5tzYyLoOJubg9LYFZ_eVgn7HNpXPkYTrxfKmpZ_e3wnUUezDUxXEbIG85uhiErH1ZL7wyPUypqbq0"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded text-xs font-bold backdrop-blur-sm">
+                            NEW ARRIVAL
+                        </div>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-bold text-on-background">Angus Select Batch #042</h4>
+<p class="text-on-surface-variant text-sm">Montana High Plains</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-xl">15.2%</p>
+<p class="text-[10px] text-secondary font-semibold uppercase tracking-wider">EST. ROI</p>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full mb-6">
+<div class="h-full bg-primary rounded-full w-3/4"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Price per share</p>
+<p class="text-lg font-bold text-on-background">$1,250</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Shares remaining</p>
+<p class="text-lg font-bold text-secondary">42 / 120</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                            Invest Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Investment Card 2 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] group border border-outline-variant/5">
+<div class="relative h-56 overflow-hidden">
+<img alt="Hereford Cattle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Brown and white Hereford cattle grazing in a sun-drenched golden meadow during late afternoon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7lN3wFJCOJ6XiNtqUOJU3vaqgdEH3jdim84KVXOK0yXmCjLzE6x9tLmhlQWKqrF92Fs3Lx61BKBOfW6_d-aU4FAlC151ga66ur2ABPPIHZyG__1q1weaWf9uLMK0P8ctqonNyYPsPTruJ7iTE2NrwKBcSfZ93chj34eic1ViznPvH78-EOsRuDohOpJT_17ilg2RAtmLM6TFfZ0JlTrK19trsg_VViPtLFs6Oikz2fQ8yfscFMQAlHGWwrSpqQsK6xoXdgKEnYQ"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-bold text-on-background">Hereford Heritage #019</h4>
+<p class="text-on-surface-variant text-sm">Verde Valley Farms</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-xl">13.8%</p>
+<p class="text-[10px] text-secondary font-semibold uppercase tracking-wider">EST. ROI</p>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full mb-6">
+<div class="h-full bg-primary rounded-full w-1/2"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Price per share</p>
+<p class="text-lg font-bold text-on-background">$980</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Shares remaining</p>
+<p class="text-lg font-bold text-secondary">75 / 150</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                            Invest Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Investment Card 3 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden shadow-[0px_12px_32px_rgba(26,28,28,0.06)] group border border-outline-variant/5">
+<div class="relative h-56 overflow-hidden">
+<img alt="Brahman Cattle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of a unique white Brahman cow with its distinct hump in a high-contrast rural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjKRc6w9uOIxonKdztOs6qZI88D4s41RaDz-tp6hHjv5ZF8DKD4sHc648g3VgDv0EBfkpJ81801Bt7hoLdM2rVZ1KZf6EClytEe6qp_2dX4foxnZs5KyANeRoQbMOmPB6f9Yl3s4MfUb0tsH_ZWntQCOZSA1fKWk7Bf4z_IVCwhHkkxoEIvMT3qwyUZvTmCO0Ix3ezNQtakMuTe9Tqo_22wilsC0MDjwkqEw1XgxuVAYQ3kuXngpKDCNpLe35mbaYE-MvrPJb2dDU"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            VERIFIED
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-xl font-bold text-on-background">Brahman Specialty #10</h4>
+<p class="text-on-surface-variant text-sm">Miller Ranchlands</p>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-xl">16.5%</p>
+<p class="text-[10px] text-secondary font-semibold uppercase tracking-wider">EST. ROI</p>
+</div>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full mb-6">
+<div class="h-full bg-primary rounded-full w-1/4"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Price per share</p>
+<p class="text-lg font-bold text-on-background">$2,100</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase font-medium">Shares remaining</p>
+<p class="text-lg font-bold text-secondary">18 / 60</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                            Invest Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-[#faf9f8]/85 backdrop-blur-md z-50 rounded-t-[0.75rem] shadow-[0px_-4px_24px_rgba(26,28,28,0.04)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center bg-[#154212] text-[#ffffff] rounded-xl px-4 py-1 Active: scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<!-- Search -->
+<a class="flex flex-col items-center justify-center text-[#805533] hover:text-[#154212] transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Search</span>
+</a>
+<!-- Investments -->
+<a class="flex flex-col items-center justify-center text-[#805533] hover:text-[#154212] transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Investments</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-[#805533] hover:text-[#154212] transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Work_Sans'] text-[10px] font-medium uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+<!-- FAB Suppression: On dashboard we show a quick 'Invest' action -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-tertiary text-on-tertiary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>
